@@ -52,7 +52,7 @@ func (s *Serializer) readValue() interface{} {
 		return nil
 	}
 
-	if objType == "i" {
+	if objType == "i" or objType == "d" {
 		s.move()
 		val := s.readInt()
 		s.move()
