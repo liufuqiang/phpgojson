@@ -1,6 +1,8 @@
-phpgojson
+﻿phpgojson
 =========
+fork自： https://github.com/Wuvist/phpgojson ,修复了中文编码的问题
 
-GO module to parse php serialised obj and convert to json format
+将PHP的序列化 （serialize) 串转为json
 
-修正中文编码问题
+DEMO：
+ json_str := phpgojson.GoJson([]byte(body))
