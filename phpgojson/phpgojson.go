@@ -37,14 +37,12 @@ func (s *Serializer) readInt() int{
 }
 
 func (s *Serializer) readString(size int) string {
-	s.move()
-	result := ""
-	for i:=0 ;i<size; i++ {
-		result = result + string(s.raw[s.pos])
-		s.move()
-	}
-	s.move()
-	return result
+     s.move()
+     result := string([]rune(string(s.raw[s.pos:s.pos+size])))
+     for i:=0 ;i<=size; i++ {
+         s.move()
+     }
+     return result
 }
 
 func (s *Serializer) readValue() interface{} {
